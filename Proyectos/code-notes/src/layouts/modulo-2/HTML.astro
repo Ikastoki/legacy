@@ -1,0 +1,49 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes HTML";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-2/html/fundamentos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/html/cabecera/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/html/elementos/textos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/html/elementos/enlaces/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/html/elementos/listas/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/html/elementos/tablas/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/html/elementos/formularios/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/html/elementos/imagenes/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/html/elementos/audio-video/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/html/elementos/interactivas/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/html/elementos/objetos-externos/*.md"
+  ),
+  await Astro.glob("../../pages/markdown/modulo-2/html/buenas-practicas/*.md"),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="HTML"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

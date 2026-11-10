@@ -1,0 +1,293 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey: #868e96;
+  --blue: #1971c2;
+  --second-bg: #e9ecef;
+  --heading-font: "Updock", cursive;
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+video,
+svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Header */
+
+.header {
+  padding: 30px 50px;
+  border-bottom: 2px solid black;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+
+  li > a {
+    font-weight: 900;
+  }
+
+  li:not(:last-child) a::after {
+    content: "/";
+    margin-left: 5px;
+    padding-left: 5px;
+  }
+}
+
+.hero {
+  text-align: center;
+  margin-top: 10px;
+
+  p {
+    color: var(--grey);
+    margin-top: 10px;
+  }
+}
+
+/* Projects */
+.projects {
+  text-align: center;
+
+  h2 {
+    margin: 10px 0;
+  }
+
+  ul {
+    background-color: var(--second-bg);
+
+    li {
+      border-bottom: 2px solid var(--black);
+      padding: 10px 0;
+    }
+
+    li:first-of-type {
+      border-top: 2px solid var(--black);
+    }
+  }
+}
+
+/* Wok Experience */
+.work-experience {
+  h2 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  article {
+    background-color: var(--second-bg);
+    padding: 20px;
+    border-bottom: 2px solid var(--black);
+
+    &:first-of-type {
+      border-top: 2px solid black;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--blue);
+    }
+  }
+}
+
+/* Education */
+.education {
+  padding: 20px;
+  border-bottom: 2px solid var(--black);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  li::before {
+    content: "- ";
+  }
+}
+
+/* Reviews */
+.reviews {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.reviews .review:not(:first-of-type) {
+  display: none;
+}
+
+.review {
+  border: 2px solid var(--black);
+  padding: 20px;
+  border-radius: 20px;
+
+  blockquote {
+    margin: 10px 0;
+  }
+
+  .review-footer {
+    color: var(--grey);
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin: 10px 0 20px 0;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+/* Desktop */
+
+@media (width > 700px) {
+  .header {
+    padding: 10px 20px 50px 20px;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    display: flex;
+    align-items: center;
+  }
+
+  .navigation {
+    gap: 20px;
+    li:not(:last-child) a::after {
+      content: "/";
+      margin-left: 5px;
+      padding-left: 0;
+    }
+  }
+
+  section:not(:last-of-type) {
+    border: 2px solid black;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .projects ul {
+    background-color: var(--white);
+  }
+
+  .projects ul li:last-of-type {
+    border-bottom: 0;
+  }
+
+  .projects ul li:first-of-type {
+    border-top: 0;
+  }
+
+  .work-experience article {
+    background-color: var(--white);
+  }
+
+  .work-experience article:last-of-type {
+    border-bottom: 0;
+  }
+
+  .work-experience article:first-of-type {
+    border-top: 0;
+  }
+
+  .reviews .review:not(:first-of-type) {
+    display: block;
+  }
+
+  .reviews {
+    grid-column: 1/4;
+  }
+
+  .review {
+    max-width: 200px;
+  }
+
+  .review-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,94 @@
+---
+import Github from "./icons/Github.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header class="header">
+  <nav class="navbar container">
+    <div class="brand">
+      <a href="/">
+        <img
+          src="/img/logos/logo.svg"
+          alt="logo de code-path"
+          class="theme-img"
+          width="30"
+          height="30"
+        />
+        <span class="brand-title">{title}</span>
+      </a>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn btn-github" href="https://github.com/u-n-a-i">
+        <Github />
+        <span>GitHub</span>
+      </a>
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 2;
+    min-width: 380px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-color);
+  }
+
+  .brand-title {
+    font-size: 2rem;
+    padding-bottom: 5px;
+    font-weight: bold;
+    background: linear-gradient(to right, #be123c, #ff758f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 1000px) {
+    .brand-title {
+      font-size: 1.5rem;
+      padding-bottom: 5px;
+      font-weight: bold;
+      background: linear-gradient(to right, #be123c, #ff758f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .btn-github {
+    color: var(--white);
+    background-color: var(--black);
+    height: 30px;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes CSS";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-2/css/bases/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/selectores/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/pseudoclases/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/pseudoelementos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/tipografia/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/colores/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/fondos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/maquetacion/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/flexbox/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/grid/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-2/css/animaciones-filtros/*.md"),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="CSS"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

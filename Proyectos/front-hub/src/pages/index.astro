@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import SearchBar from "../components/SearchBar.astro";
+import CategoryFilter from "../components/CategoryFilter.astro";
+import Cards from "../components/Cards.astro";
+---
+
+<Layout>
+  <div class="main-container">
+    <h1 class="main-title">Front-Hub</h1>
+    <p class="main-description">
+      Front-Hub reúne los proyectos frontend que realizo como parte de mi
+      formación continua. Para no quedarme atascado en el "tutorial hell",
+      primero miro el video, apunto lo esencial (colores, medidas, conceptos que
+      sé que me van a costar) y luego construyo el proyecto desde cero, a mi
+      manera. Así noto que aprendo mejor y no solo sigo instrucciones.
+    </p>
+
+    <SearchBar />
+    <CategoryFilter />
+    <Cards />
+  </div>
+</Layout>
+
+<style>
+  .main-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primaryTextColor);
+    background: linear-gradient(to right, #be123c, #333333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+  }
+
+  .main-title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #be123c, #ff758f);
+    bottom: -10px;
+    left: 0;
+    border-radius: 10px;
+  }
+
+  .main-description {
+    font-size: 1.2rem;
+    color: var(--black);
+    margin-bottom: 30px;
+    width: 70%;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: start;
+  }
+</style>

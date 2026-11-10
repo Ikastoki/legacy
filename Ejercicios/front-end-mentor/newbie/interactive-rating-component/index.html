@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <div class="card__star">
+          <img src="./images/icon-star.svg" alt="orange start icon" />
+        </div>
+        <h2 class="card__heading">How did we do?</h2>
+        <p class="card__text">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <ul class="card__list">
+          <li class="card__item"><a href="#" class="card__item__link">1</a></li>
+          <li class="card__item"><a href="#" class="card__item__link">2</a></li>
+          <li class="card__item"><a href="#" class="card__item__link">3</a></li>
+          <li class="card__item"><a href="#" class="card__item__link">4</a></li>
+          <li class="card__item"><a href="#" class="card__item__link">5</a></li>
+        </ul>
+        <button class="card__btn" id="submit-btn">Submit</button>
+      </div>
+
+      <div class="card hidden" id="thank-card">
+        <div class="thank__image">
+          <img
+            src="./images/illustration-thank-you.svg"
+            alt="charging machine"
+          />
+        </div>
+        <p class="thank__subtitle">You selected out of 5</p>
+        <h2 class="thank__heading">Thank you!</h2>
+        <p class="thank__text">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

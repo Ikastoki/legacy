@@ -1,0 +1,134 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #000000;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #000000;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #333333;
+}
+
+input[type="text"]::placeholder {
+  color: #999999;
+}
+
+/* Icono del calendario (Flatpickr lo añade automáticamente) */
+.flatpickr-calendar {
+  border: 2px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.flatpickr-day.selected {
+  background: #000000;
+  border-color: #000000;
+}
+
+button {
+  width: 100%;
+  background: #555555;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #333333;
+}
+
+button:active {
+  background: #222222;
+}
+
+.result {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #000000;
+  min-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+.result:empty {
+  display: none;
+}
+
+.result.error {
+  color: #cc0000;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  input[type="text"], button {
+    padding: 0.75rem;
+  }
+  
+  .result {
+    font-size: 1rem;
+  }
+}

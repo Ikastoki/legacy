@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import "../styles/header.css";
+import "../styles/courses.css";
+import "../styles/chat.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Hell</title>
+    <link rel="icon" type="image/svg+xml" href="/img/logo-dark.svg" />
+    <script is:inline>
+      (function () {
+        var theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

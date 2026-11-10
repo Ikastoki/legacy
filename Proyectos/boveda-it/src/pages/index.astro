@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { home } from "../data/home";
+---
+
+<MainLayout
+  title="Bóveda IT"
+  heading="Bóveda-IT"
+  description=`
+        Esta bóveda nace de una convicción: la tecnología se domina entendiendo sus capas, no memorizando comandos. Aquí documentamos no solo el cómo, sino el por qué: desde el ciclo de instrucción de la CPU hasta el prompt engineering en LLMs. Cada sección conecta con las demás porque en IT nada existe aislado. Úsala como referencia, como ruta de aprendizaje o como inspiración. 
+        Y si algo falta: contribuye. El conocimiento crece cuando se comparte. 
+`
+>
+  <Terminal />
+
+  <Accordion title="Bienvenida" sections={home.bienvenida} />
+
+  <ActionMenu />
+</MainLayout>

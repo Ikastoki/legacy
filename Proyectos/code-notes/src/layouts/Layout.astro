@@ -1,0 +1,29 @@
+---
+import Header from "../components/Header.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <Header title="Code Notes" />
+    </header>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import url(../styles/variables.css);
+  @import url(../styles/globals.css);
+  @import url(../styles/utils.css);
+  @import url(../styles/markdown.css);
+</style>

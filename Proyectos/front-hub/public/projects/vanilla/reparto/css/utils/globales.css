@@ -1,0 +1,62 @@
+:root {
+  /* Colores */
+  --primario: #e8505b;
+  --primario-oscuro: #e22331;
+  --secundario: #455a64;
+  --secundario-oscuro: #303f46;
+  --negro: #000;
+  --blanco: #ffffff;
+  --grisClaro: #eceeef;
+  --sombra: #99a4a9;
+
+  /* Fuentes */
+  --fuente_principal: "Roboto", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--fuente_principal);
+  font-size: 1.6rem;
+}
+
+p {
+  color: var(--negro);
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 5rem 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}

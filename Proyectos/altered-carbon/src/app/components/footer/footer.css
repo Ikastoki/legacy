@@ -1,0 +1,27 @@
+.footer {
+  background: var(--status-bg);
+  color: var(--sidebar-fg);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px var(--shadow);
+  margin-top: 40px;
+}
+
+.gitlab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sidebar-fg);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.gitlab-link:hover {
+  color: aliceblue;
+}
+
+.gitlab-icon {
+  width: 50px;
+  height: 50px;
+}

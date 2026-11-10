@@ -1,0 +1,90 @@
+<div class="search-bar">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Buscar template..."
+    class="search-input"
+  />
+</div>
+
+<style>
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    padding: 10px 16px;
+    width: 80%;
+    max-width: 400px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: var(--secondaryTextColor);
+    /* color: #2c2c2c; */
+    outline: none;
+    transition:
+      border 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .search-input::placeholder {
+    color: rgba(44, 44, 44, 0.6);
+  }
+
+  .search-input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search-input");
+    const buttons = document.querySelectorAll(".filter-button");
+    const cards = document.querySelectorAll(".template-card");
+
+    let activeCategory = "vanilla";
+
+    function updateActiveCategory() {
+      const activeButton = document.querySelector(".filter-button.active");
+      activeCategory = activeButton ? activeButton.dataset.category : "vanilla";
+    }
+
+    function filterTemplates() {
+      const searchText = searchInput.value.trim().toLowerCase();
+
+      cards.forEach((card) => {
+        const title = card
+          .querySelector(".template-title")
+          .innerText.toLowerCase();
+        const matchesSearch = title.includes(searchText);
+        const matchesCategory = card.dataset.category === activeCategory;
+
+        if (searchText === "") {
+          card.style.display = matchesCategory ? "block" : "none";
+        } else {
+          card.style.display = matchesSearch ? "block" : "none";
+        }
+      });
+    }
+
+    searchInput.addEventListener("input", filterTemplates);
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        updateActiveCategory();
+        filterTemplates();
+      });
+    });
+
+    filterTemplates();
+  });
+</script>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "description": "Comprar galletas",
+    "status": "todo",
+    "createdAt": "2026-07-16T18:02:32.58706467",
+    "updatedAt": "2026-07-16T18:02:32.58706467"
+  },
+  {
+    "id": 2,
+    "description": "Comprar limon",
+    "status": "todo",
+    "createdAt": "2026-07-16T18:02:45.41083865",
+    "updatedAt": "2026-07-16T18:02:45.41083865"
+  }
+]

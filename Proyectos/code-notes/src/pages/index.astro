@@ -1,0 +1,267 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Cards from "../components/Cards.astro";
+import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Code-Notes">
+  <main class="bg-grid">
+    <div class="information container">
+      <h1 class="information-title">¿Qué encontraras?</h1>
+      <p class="information-text">
+        Code Path es una página web que recopila <span class="underline">
+          apuntes sobre diversos temas relacionados con la programación.</span
+        > Aquí encontrarás apuntes organizados en módulos, diseñados para adquirir
+        una base sólida en los fundamentos básicos.
+        <br />
+        Incluye contenido relacionado con el front-end, como definir la estructura
+        del contenido, aplicar diseño y estética, y añadir interactividad y funcionalidad.
+        También cuenta con un módulo dedicado al back-end, enfocado en Java, y otro
+        sobre cómo persistir los datos utilizando bases de datos. Además, ofrece
+        la posibilidad de profundizar en conceptos más avanzados, así como una sección
+        con herramientas complementarias y recursos para enriquecer el aprendizaje.
+      </p>
+    </div>
+
+    <!-- Modulo-1 -->
+    <Cards title="Modulo - 1 (Adquiere una base)">
+      <Card
+        title="Fundamentos de sistemas"
+        description="Fundamentos esenciales de la programación, conceptos genéricos para aplicar a cualquier lenguaje."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/sistemas/01-hardware_software"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Fundamentos de redes"
+        description="Fundamentos esenciales de redes, conceptos relacionados con la programación y el desarrollo web."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/redes/01-modelos_de_referencia"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Fundamentos de programación"
+        description="Fundamentos esenciales de la programación, conceptos genéricos para aplicar a cualquier lenguaje."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/programacion/conceptos/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Fundamentos de bases de datos"
+        description="Fundamentos esenciales de la programación, conceptos genéricos para aplicar BBDD de forma global."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/bbdd/01-relacionales"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Fundamentos web"
+        description="En esta sección encontraras apuntes relacionados con internet y una introducción a la web."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/web/01-tipos_de_desarrollo"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Fundamentos de testing"
+        description="En esta sección encontraras apuntes relacionados con el testing por nivel, por ejecución, TDD, pruebas UI..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-1/testing/01-quality_assurance"
+        firstBtnText="Ver Apuntes"
+      />
+      <!-- <Card
+        title="Fundamentos de seguridad"
+        description="En esta sección encontraras apuntes relacionados con cifrado, criptografía, amenazas, vulnerabilidades, autenticación..."
+        firstBtn
+        firstBtnHref=""
+        firstBtnText="Ver Apuntes"
+        disabled={true}
+      /> -->
+    </Cards>
+
+    <!-- Modulo-2 -->
+    <Cards title="Modulo - 2 (Introducción a la Web)">
+      <Card
+        title="HTML"
+        description="En esta sección encontraras apuntes relacionados con los fundamentos, cabeceras, elementos y buenas practicas de HTML..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-2/html/fundamentos/01-html"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="CSS"
+        description="En esta sección encontraras apuntes relacionados con los pilares de CSS, Flexbox, Grid, diseño adaptativo, animaciones..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-2/css/bases/01-css"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Diseño"
+        description="En esta sección encontraras apuntes relacionados con principios de diseño web, ui, ux, enfoques de desarrollo..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-2/diseño/conceptos/01-diseño_web"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Bootstrap"
+        description="En esta sección encontraras apuntes relacionados con los conceptos básicos, diseño, estados, componentes..."
+        firstBtn
+        firstBtnHref="#"
+        firstBtnText="Ver Apuntes"
+        disabled={true}
+      />
+      <Card
+        title="Tailwind"
+        description="En esta sección encontraras apuntes relacionados con los conceptos básicos, diseño, estados, animaciones... "
+        firstBtn
+        firstBtnHref="#"
+        firstBtnText="Ver Apuntes"
+        disabled={true}
+      />
+      <Card
+        title="SASS"
+        description="En esta sección encontraras apuntes relacionados con los conceptos básicos, funciones, reutilización y lógica..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-2/sass/basico/01-sass"
+        firstBtnText="Ver Apuntes"
+      />
+    </Cards>
+
+    <!-- Modulo-3 -->
+    <Cards title="Modulo - 3 (Dinamiza la Web)">
+      <Card
+        title="JavaScript [Core]"
+        description="En esta sección encontraras apuntes relacionados con el core, fundamentos, manipular datos, asincronía, APIs..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-3/javascript-core/conceptos/01-javascript"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="JavaScript [Web]"
+        description="En esta sección encontraras apuntes relacionados con el enfoque de js hacia la web. El BOM, DOM, eventos..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-3/javascript-web/bom/01-bom"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="JavaScript [NodeJS]"
+        description="En esta sección encontraras apuntes básico de node, módulos, paquetes propios de node, externos..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-3/javascript-node/conceptos/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="TypeScript"
+        description="En esta sección encontraras apuntes relacionados con los diferentes tipos que hay, funciones, interfaces, genéricos, decoradores, módulos..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-3/typescript/conceptos/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Angular"
+        description="En esta sección encontraras apuntes relacionados con los conceptos de componentes, módulos, templates, directivas, rutas, formularios..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-3/angular/conceptos/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+    </Cards>
+
+    <!-- Modulo-4 -->
+    <Cards title="Modulo - 4 (Tras el telón)">
+      <Card
+        title="SQL"
+        description="En esta sección encontraras apuntes relacionados con DDL, DML, vistas, indices, transacciones, optimización..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-4/sql/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Java"
+        description="En esta sección encontraras apuntes relacionados con los fundamentos, métodos, arrays, POO, colecciones, JDBC..."
+        firstBtn
+        firstBtnHref="./markdown/modulo-4/java/fundamentos/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+    </Cards>
+
+    <!-- Herramientas Complementarias -->
+    <Cards title="Herramientas Complementarias">
+      <Card
+        title="Terminal"
+        description="En esta sección encontraras apuntes relacionados con comandos básicos, navegación, permisos y propiedades..."
+        firstBtn
+        firstBtnHref="./markdown/herramientas/terminal/conceptos/01-terminal"
+        firstBtnText="Ver Apuntes"
+      />
+      <Card
+        title="Control de versiones"
+        description="En esta sección encontraras apuntes relacionados con el control de versiones enfocado a Git y GitHub."
+        firstBtn
+        firstBtnHref="./markdown/herramientas/control-de-versiones/01-introduccion"
+        firstBtnText="Ver Apuntes"
+      />
+      <!-- <Card
+        title="Gestor de Paquetes"
+        description=""
+        firstBtn
+        firstBtnHref="#"
+        firstBtnText="Ver Apuntes"
+        disabled={true}
+      /> -->
+    </Cards>
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .information {
+    padding-top: calc(60px + 2rem);
+  }
+
+  .information-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+
+  .information-text {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    /* max-width: 1000px; */
+    text-wrap: pretty;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  a {
+    color: var(--black);
+    font-weight: 600;
+    border-bottom: 1px solid var(--black);
+    transition: all 0.1s ease;
+    display: inline-block;
+    margin-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    text-decoration: underline;
+
+    &:hover {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+  }
+
+  .underline {
+    display: inline;
+    background-image: linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding-bottom: 3px;
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes BBDD";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-1/bbdd/*.md"),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="BBDD"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

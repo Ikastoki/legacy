@@ -1,0 +1,35 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes Angular";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-3/angular/conceptos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-3/angular/basicos/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/angular/inyeccion-de-dependencia/*.md"
+  ),
+  await Astro.glob("../../pages/markdown/modulo-3/angular/rutas/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-3/angular/comunicacion/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-3/angular/formularios/*.md"),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="Angular"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

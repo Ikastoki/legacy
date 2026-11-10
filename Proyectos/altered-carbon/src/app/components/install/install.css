@@ -1,0 +1,38 @@
+.steps {
+  display: grid;
+  gap: 0.75rem;
+}
+.kbd {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--panel-border);
+  background: #1a2434;
+  color: var(--fg-editor);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+.copy-wrap {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.code-inline {
+  background: #1a2434;
+  border: 1px solid var(--panel-border);
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.btn-ghost {
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: var(--fg-editor);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+}

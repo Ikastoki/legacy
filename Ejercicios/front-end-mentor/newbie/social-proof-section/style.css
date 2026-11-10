@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+:root {
+  /* Colors */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  /* Typography */
+  --primary-font: "League Spartan", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  line-height: 1.2;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 4rem;
+}
+
+.hero {
+  background-image: url(./images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.hero__heading {
+  color: var(--very-dark-magenta);
+  font-size: 4.2rem;
+  font-weight: 900;
+}
+
+.hero__paragraph {
+  color: var(--dark-grayish-magenta);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-wrap: pretty;
+  margin: 3rem 0 4rem 0;
+}
+
+.hero__reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero__review {
+  background-color: var(--light-grayish-magenta);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.review__starts {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.review__rate {
+  color: var(--very-dark-magenta);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.cards {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.card {
+  background-color: var(--very-dark-magenta);
+  color: var(--light-grayish-magenta);
+  padding: 6rem 3rem;
+  border-radius: 15px;
+}
+
+.card__heading {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.card__heading--image {
+  border-radius: 50%;
+}
+
+.card__profile {
+  font-size: 2.5rem;
+}
+
+.card__profile--rol {
+  color: var(--soft-pink);
+  font-weight: 400;
+}
+
+.card__paragraph {
+  font-size: 3rem;
+  text-wrap: pretty;
+}

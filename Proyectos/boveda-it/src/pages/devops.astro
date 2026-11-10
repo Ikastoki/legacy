@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { devops } from "../data/devops";
+---
+
+<MainLayout
+  title="DevOps"
+  heading="DevOps"
+  description=`
+        Esta sección documenta las prácticas y herramientas que unifican el desarrollo y las operaciones para entregar software de forma rápida, segura y confiable. Cubre el ciclo completo: desde el control de versiones con Git y colaboración en GitHub, hasta la contenedorización con Docker, la orquestación con Kubernetes, la gestión de infraestructura como código con Terraform y la administración automatizada de servidores. Con enfoque en CI/CD, idempotencia, observabilidad y seguridad, cada bloque está diseñado para automatizar lo repetitivo, garantizar entornos reproducibles y acelerar el feedback sin sacrificar estabilidad. `
+>
+  <Terminal />
+
+  <Accordion
+    title="Control de versiones {Git-GitHub}"
+    sections={devops.controlVersiones}
+  />
+  <Accordion title="Contenedores {Docker}" sections={devops.contenedores} />
+  <Accordion
+    title="Orquestadores {Kubernetes}"
+    sections={devops.orquestadores}
+  />
+  <Accordion
+    title="Infraestructura como código {Terraform}"
+    sections={devops.iac}
+  />
+  <Accordion title="Gestión y despliegue" sections={devops.gestionDespliegue} />
+
+  <ActionMenu />
+</MainLayout>

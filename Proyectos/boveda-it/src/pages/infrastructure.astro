@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { infrastructure } from "../data/infrastructure";
+---
+
+<MainLayout
+  title="Infraestructura"
+  heading="Infraestructura"
+  description=`
+        Esta sección documenta los cimientos físicos y lógicos de cualquier entorno IT: desde la arquitectura de hardware (CPU, GPU, memoria, almacenamiento) hasta la virtualización de sistemas. Incluye fundamentos de software de sistema, administración de Linux (Ubuntu) y redes bajo el modelo TCP/IP, con enfoque en comandos reales, diagnóstico y automatización. Ideal para quien necesita entender cómo funciona y cómo se opera una infraestructura.
+`
+>
+  <Terminal />
+
+  <Accordion title="Bases del sistema" sections={infrastructure.bases} />
+  <Accordion title="Sistema operativo: Linux" sections={infrastructure.linux} />
+  <Accordion
+    title="Fundamentos de redes y comunicaciones"
+    sections={infrastructure.redes}
+  />
+
+  <ActionMenu />
+</MainLayout>

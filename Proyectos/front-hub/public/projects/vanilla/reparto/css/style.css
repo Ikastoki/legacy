@@ -1,0 +1,11 @@
+@import url(utils/globales.css);
+@import url(utils/utilidades.css);
+
+@import url(components/header.css);
+@import url(components/formulario.css);
+@import url(components/pasos.css);
+@import url(components/testimoniales.css);
+@import url(components/favoritos.css);
+@import url(components/repartidores.css);
+@import url(components/descargas.css);
+@import url(components/footer.css);

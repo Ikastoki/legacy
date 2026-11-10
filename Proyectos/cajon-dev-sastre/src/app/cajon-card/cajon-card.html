@@ -1,0 +1,40 @@
+<div class="cajon-wrapper">
+  <div class="cajon" [class.abierto]="abierto" (click)="onCajonClick($event)">
+    <div class="cajon-interior">
+      <div class="interior-header">
+        <span class="interior-titulo">{{ cajon.titulo }}</span>
+        <button class="btn-cerrar" (click)="onCerrarClick($event)">Cerrar</button>
+      </div>
+      <div class="recursos-lista">
+        @for (recurso of cajon.recursos; track recurso.nombre) {
+          <a
+            href="{{ recurso.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fichero"
+          >
+            <div class="fichero-inner">
+              <div class="fichero-texto">
+                <div class="fichero-nombre">{{ recurso.nombre }}</div>
+                <div class="fichero-desc">{{ recurso.desc }}</div>
+              </div>
+              <svg class="fichero-icono" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="cajon-frente">
+      <div class="pespunte"></div>
+      <div class="tirador"></div>
+      <div class="cajon-icono">{{ cajon.icono }}</div>
+      <h3 class="cajon-titulo">{{ cajon.titulo }}</h3>
+      <p class="cajon-descripcion">{{ cajon.descripcion }}</p>
+      <span class="etiqueta">{{ cajon.recursos.length }} recursos</span>
+    </div>
+  </div>
+  <div class="sombra-cajon"></div>
+</div>

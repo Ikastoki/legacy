@@ -1,0 +1,108 @@
+---
+const { template } = Astro.props;
+---
+
+<div class="template-card" data-category={template.category}>
+  <!-- <img src={template.img} alt={template.title} class="template-image" /> -->
+  <h3 class="template-title">{template.title}</h3>
+  <!-- Añadido para búsqueda -->
+  <div class="template-tags">
+    {template.tags.map((tag: any) => <span class="badge">{tag}</span>)}
+  </div>
+  <p class="template-description">{template.description}</p>
+  <div class="template-buttons">
+    <a href={template.github} target="_blank" class="button github">GitHub</a>
+    <a href={template.preview} target="_blank" class="button preview">Preview</a
+    >
+  </div>
+</div>
+
+<style>
+  .template-card {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 300px;
+    margin: 1rem auto;
+    color: #2c2c2c;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .template-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .template-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .template-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .template-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .badge {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    color: var(--primaryTextColor);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .template-description {
+    font-size: 0.95rem;
+    color: var(--secondaryTextColor);
+    margin-bottom: 1rem;
+  }
+
+  .template-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    color: var(--white);
+  }
+
+  .button.github {
+    background: var(--primaryTextColor);
+  }
+
+  .button.github:hover {
+    background: #000;
+  }
+
+  .button.preview {
+    background: #cf2948;
+  }
+
+  .button.preview:hover {
+    background: #be123c;
+  }
+</style>

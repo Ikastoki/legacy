@@ -1,0 +1,13 @@
+.text-center {
+  text-align: center;
+}
+
+.bg-primario {
+  background-color: var(--primario);
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

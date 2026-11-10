@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configuración de Tailwind CDN
+      tailwind.config = {
+        darkMode: "media",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#E63946",
+              secondary: "#F1FAEE",
+              accent: "#A8DADC",
+              dark: "#1D3557",
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-out",
+              "slide-up": "slideUp 0.8s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: 0 },
+                "100%": { opacity: 1 },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(50px)", opacity: 0 },
+                "100%": { transform: "translateY(0)", opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-secondary dark:bg-dark text-dark dark:text-secondary">
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 bg-primary dark:bg-dark">
+      <h1
+        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-white to-red-600"
+      >
+        Pizza
+      </h1>
+      <button
+        id="menu-toggle"
+        class="sm:hidden text-white text-3xl transition-transform transform hover:rotate-180"
+      >
+        ☰
+      </button>
+      <ul id="menu" class="hidden sm:flex space-x-8 text-white">
+        <li>
+          <a
+            href="#about"
+            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+            >Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            href="#menu-section"
+            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+            >Menú</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <ul
+      id="mobile-menu"
+      class="hidden flex-col items-center bg-primary dark:bg-dark text-white sm:hidden space-y-4 p-4"
+    >
+      <li>
+        <a
+          href="#about"
+          class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+          >Nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          href="#menu-section"
+          class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+          >Menú</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-600 hover:via-white hover:to-red-600 transition-all duration-300"
+          >Contacto</a
+        >
+      </li>
+    </ul>
+
+    <!-- Hero Section -->
+    <header
+      class="relative flex flex-col justify-center items-center text-center p-16 min-h-[80vh]"
+      style="
+        background-image: url('img/hero.avif');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- Fondo oscuro semi-transparente -->
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+
+      <h2
+        class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg z-10 animate-fade-in"
+      >
+        La mejor pizza artesanal
+      </h2>
+      <p class="mt-6 text-lg md:text-2xl text-white/90 z-10 animate-fade-in">
+        Ingredientes frescos, sabor inolvidable 🍕
+      </p>
+      <a
+        href="#menu-section"
+        class="mt-8 px-6 py-3 bg-accent text-dark font-semibold rounded-full hover:bg-primary hover:text-white transition z-10 animate-fade-in"
+      >
+        Ver Menú
+      </a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 max-w-5xl mx-auto animate-slide-up">
+      <h3 class="text-3xl font-bold mb-6 text-primary dark:text-accent">
+        Sobre Nosotros
+      </h3>
+      <p class="text-lg leading-relaxed">
+        En Pizza llevamos más de 20 años preparando pizzas con amor. Nuestra
+        receta familiar combina ingredientes locales frescos, pasión y tradición
+        italiana.
+      </p>
+    </section>
+
+    <!-- Menu Section -->
+    <section
+      id="menu-section"
+      class="py-16 px-6 bg-accent dark:bg-primary/80 animate-slide-up"
+    >
+      <h3 class="text-3xl font-bold mb-6 text-dark dark:text-secondary">
+        Nuestro Menú
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Pizza Margherita -->
+        <div class="bg-white dark:bg-dark p-6 rounded-xl shadow-lg">
+          <img
+            src="img/pizza_1.avif"
+            alt="Pizza Margherita"
+            class="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h4 class="text-xl font-semibold mb-2">Margherita</h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            Tomate, mozzarella, albahaca fresca.
+          </p>
+        </div>
+
+        <!-- Pizza Pepperoni -->
+        <div class="bg-white dark:bg-dark p-6 rounded-xl shadow-lg">
+          <img
+            src="img/pizza_2.avif"
+            alt="Pizza Pepperoni"
+            class="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h4 class="text-xl font-semibold mb-2">Pepperoni</h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            Queso mozzarella, pepperoni crujiente.
+          </p>
+        </div>
+
+        <!-- Pizza Veggie -->
+        <div class="bg-white dark:bg-dark p-6 rounded-xl shadow-lg">
+          <img
+            src="img/pizza_3.avif"
+            alt="Pizza Veggie"
+            class="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h4 class="text-xl font-semibold mb-2">Veggie</h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            Champiñones, pimientos, aceitunas, cebolla.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 max-w-5xl mx-auto animate-slide-up">
+      <h3 class="text-3xl font-bold mb-6 text-primary dark:text-accent">
+        Contáctanos
+      </h3>
+      <p class="text-lg leading-relaxed mb-6">
+        ¿Tienes hambre? ¡Llámanos o visítanos hoy mismo!
+      </p>
+      <div class="space-y-2">
+        <p><strong>Teléfono:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> contacto@pizza.com</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-dark text-white text-center p-6 mt-8">
+      <p>📍 Calle Falsa 123, Ciudad Pizza, Italia</p>
+      <p class="mt-2">&copy; 2095 Pizza. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("transition-transform");
+        mobileMenu.classList.toggle("transform");
+      });
+    </script>
+  </body>
+</html>

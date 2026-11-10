@@ -1,0 +1,61 @@
+*,
+*::before*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  margin: 0 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+
+  h1 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin: 10px 0 20px;
+  }
+}
+
+.fields {
+  display: flex;
+  gap: 10px;
+
+  input,
+  select {
+    border-radius: 5px;
+  }
+}
+
+#temperature {
+  width: 60px;
+}
+
+.convert-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+#result {
+  margin-top: 20px;
+  color: #3ea552;
+}

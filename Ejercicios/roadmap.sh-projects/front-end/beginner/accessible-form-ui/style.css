@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 30px 30px 30px 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 30px;
+
+  label {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 90%;
+
+    &::placeholder {
+      color: gainsboro;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.form-btn {
+  padding: 10px;
+  width: 90%;
+  display: block;
+  /* margin: 0 auto; */
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.form-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin: 20px 0;
+  }
+}
+
+.range {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+  position: relative;
+}
+
+.profile-list {
+  background-color: #e5e5e5;
+  width: 45%;
+  padding: 20px;
+  border-radius: 10px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 700;
+  }
+}
+
+/* Add Class */
+.line-through {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.error-input {
+  color: red;
+  border: 2px solid red !important;
+}
+
+.error {
+  color: red;
+  font-size: 1.1rem;
+}
+
+/* Desktop */
+
+@media (width > 750px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 80%;
+    max-width: 1000px;
+    gap: 0;
+  }
+
+  .profile-list {
+    width: 100%;
+  }
+}

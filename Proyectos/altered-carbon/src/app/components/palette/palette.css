@@ -1,0 +1,27 @@
+.palette {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 768px) {
+  .palette {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.swatch {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.swatch-chip {
+  height: 80px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  margin-bottom: 0.75rem;
+}
+.swatch small {
+  display: block;
+  color: #8fa2a6;
+}

@@ -1,0 +1,48 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes Java";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-4/java/fundamentos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/input-output/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/control-de-flujo/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/metodos/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/arrays/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/poo/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/clases-integradas/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-4/java/colecciones/listas/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-4/java/colecciones/conjuntos/*.md"
+  ),
+  await Astro.glob("../../pages/markdown/modulo-4/java/colecciones/mapas/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/colecciones/colas/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-4/java/colecciones/colecciones-sincronizadas/*.md"
+  ),
+  await Astro.glob("../../pages/markdown/modulo-4/java/colecciones/otros/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/java-8/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-4/java/jdbc/*.md"),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="Java"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

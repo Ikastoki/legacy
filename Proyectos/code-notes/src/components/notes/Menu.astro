@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="menu">📑</div>
+
+<style>
+  .menu {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+    .menu {
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--black);
+      background-color: rgba(0, 0, 0, 0.1);
+      font-size: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 2;
+      bottom: 10px;
+      right: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu") as HTMLDivElement | null;
+    const topics = document.querySelector(".topics") as HTMLElement | null;
+
+    if (!menu || !topics) return;
+
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
+
+    const handleMenuClick = () => {
+      if (mediaQuery.matches) {
+        topics.style.display =
+          topics.style.display === "none" || topics.style.display === ""
+            ? "block"
+            : "none";
+      }
+    };
+
+    menu.addEventListener("click", handleMenuClick);
+
+    // Inicializa el display correctamente al cargar y redimensionar
+    const updateDisplay = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches) {
+        topics.style.display = "none";
+      } else {
+        topics.style.display = "block";
+      }
+    };
+
+    // Configura el display inicial
+    updateDisplay(mediaQuery);
+
+    // Escucha cambios en la media query
+    mediaQuery.addEventListener("change", updateDisplay);
+  });
+</script>

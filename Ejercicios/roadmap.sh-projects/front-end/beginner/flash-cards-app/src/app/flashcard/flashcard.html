@@ -1,0 +1,41 @@
+<div class="flashcards-container">
+  <h1>Flash Cards</h1>
+  
+  <!-- Barra de progreso -->
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="progress"></div>
+    </div>
+    <span class="progress-text">{{ progressText }}</span>
+  </div>
+
+  <!-- Tarjeta Flash -->
+  <div class="card">
+    <div class="card-content">
+      <p class="card-text">{{ showAnswer ? currentCard.answer : currentCard.question }}</p>
+    </div>
+    
+    <!-- Botones de navegación -->
+    <div class="card-footer">
+      <button 
+        class="btn" 
+        [class.disabled]="!canGoPrevious()"
+        (click)="previousCard()"
+        [disabled]="!canGoPrevious()">
+        &lt; Previous
+      </button>
+      
+      <button class="btn btn-primary" (click)="toggleAnswer()">
+        {{ showAnswer ? 'Hide Answer' : 'Show Answer' }}
+      </button>
+      
+      <button 
+        class="btn" 
+        [class.disabled]="!canGoNext()"
+        (click)="nextCard()"
+        [disabled]="!canGoNext()">
+        Next &gt;
+      </button>
+    </div>
+  </div>
+</div>

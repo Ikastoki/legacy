@@ -1,0 +1,96 @@
+@import url("globals.css");
+
+.changelog {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+}
+
+.changelog-header {
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+}
+
+.changelog-timeline {
+  margin: 40px 0;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: var(--gray);
+  flex: 1;
+  text-align: start;
+}
+
+.timeline-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: var(--black);
+  border-radius: 50%;
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 6rem;
+  background-color: var(--black);
+}
+
+.timeline-dot::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 3rem;
+  background-color: var(--black);
+}
+
+.timeline-information {
+  flex: 2;
+  font-weight: 900;
+  text-align: start;
+  margin-left: 20px;
+}
+
+.changelog-footer {
+  margin-top: 50px;
+}
+
+.btn-changelog {
+  text-decoration: none;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.btn-changelog:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,29 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { code } from "../data/code";
+---
+
+<MainLayout
+  title="Programación"
+  heading="Programación"
+  description=`
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet porro numquam quis ipsam quidem quaerat accusantium aut voluptates distinctio. Minus rem, quo veniam explicabo quos molestias corrupti laborum itaque? `
+>
+  <Terminal />
+
+  <Accordion
+    title="Desarrollo de software {Fundamentos-Teóricos}"
+    sections={code.fundamentos}
+  />
+  <Accordion
+    title="Lenguajes {Marcado, Estilo, Programación…}"
+    sections={code.lenguajes}
+  />
+
+  <ActionMenu />
+</MainLayout>

@@ -1,0 +1,26 @@
+<section class="gallery" id="gallery">
+  <div class="container">
+    <h2 class="section-title">Galería</h2>
+    <div class="gallery-container">
+      @for (img of images; track img.src) {
+        <figure class="gallery-item">
+          <img
+            [src]="img.src"
+            [alt]="img.alt"
+            class="clickable"
+            (click)="openLightbox(img.src, img.alt)"
+          />
+          <figcaption>{{ img.alt }}</figcaption>
+        </figure>
+      }
+    </div>
+
+    @if (lightboxVisible) {
+      <div class="lightbox" (click)="closeLightbox($event)">
+        <span class="close" (click)="closeLightbox()">&times;</span>
+        <img class="lightbox-content" [src]="lightboxSrc" [alt]="lightboxAlt" />
+        <div id="caption">{{ lightboxAlt }}</div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark_grey: hsl(0, 0%, 12%);
+  --off_black: hsl(0, 0%, 8%);
+  --primary_font: "Inter";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--off_black);
+  color: var(--white);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary_font);
+}
+
+p {
+  font-size: 14px;
+}
+
+.card {
+  width: 375px;
+  margin: 0 20px;
+  background: var(--dark_grey);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.card__image {
+  width: 100px;
+  height: 100px;
+  background: url(../images/avatar-jessica.jpeg);
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.card__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card__header__name {
+  font-weight: 700;
+}
+
+.card__header__location {
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+.card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__link {
+  background: var(--grey);
+  padding: 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card__link:hover {
+  background: var(--green);
+  cursor: pointer;
+}
+
+.card__link:hover a {
+  color: #000;
+}
+
+.card__link a {
+  text-decoration: none;
+  color: var(--white);
+}

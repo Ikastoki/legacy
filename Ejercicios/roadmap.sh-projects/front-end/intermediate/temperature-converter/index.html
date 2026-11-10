@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Temperature converter (Fahrentheit, Celseus, Kelvin)"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Roadmap.sh, Temperature Converter"
+    />
+    <meta name="author" content="Unai" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Temperature Converter</h1>
+      <p>Enter the temperature, select units and submit</p>
+
+      <div class="fields">
+        <input type="number" name="temperature" id="temperature" />
+        <select name="units" id="from-units">
+          <option value="#" disabled selected>From Unit</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+        <select name="to-units" id="to-units">
+          <option value="#" disabled selected>To Unit</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+        <button class="convert-btn">Convert</button>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

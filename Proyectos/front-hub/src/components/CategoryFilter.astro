@@ -1,0 +1,93 @@
+---
+const categories = [
+  { name: "vanilla", color: "yellow" },
+  { name: "tailwind", color: "blue" },
+  { name: "bootstrap", color: "purple" },
+  { name: "astro", color: "indigo" },
+];
+---
+
+<div class="category-buttons">
+  {
+    categories.map(({ name, color }) => (
+      <button class={`filter-button ${color}`} data-category={name}>
+        {name.charAt(0).toUpperCase() + name.slice(1)}
+      </button>
+    ))
+  }
+</div>
+
+<style>
+  .category-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    color: var(--primaryTextColor);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* .filter-button.yellow {
+    color: #fbc02d;
+  }
+
+  .filter-button.blue {
+    color: #1e88e5;
+  }
+
+  .filter-button.purple {
+    color: #8e24aa;
+  }
+
+  .filter-button.indigo {
+    color: #5c6bc0;
+  } */
+
+  .filter-button:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+  }
+
+  .filter-button.active {
+    background: #2e2e2e;
+    color: var(--white);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".filter-button");
+    const cards = document.querySelectorAll(".template-card");
+
+    function filterTemplates(category) {
+      cards.forEach((card) => {
+        card.style.display =
+          card.dataset.category === category ? "block" : "none";
+      });
+
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      document
+        .querySelector(`.filter-button[data-category="${category}"]`)
+        .classList.add("active");
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () =>
+        filterTemplates(button.dataset.category)
+      );
+    });
+
+    filterTemplates("vanilla");
+  });
+</script>

@@ -1,0 +1,32 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { ai } from "../data/ai";
+---
+
+<MainLayout
+  title="Inteligencia Artificial"
+  heading="Inteligencia Artificial"
+  description=`
+        Esta sección aborda la IA desde una perspectiva "práctica" para profesionales IT: desde los fundamentos de los LLMs (tokens, embeddings, atención) hasta patrones avanzados como RAG, agentes y function calling. Incluye ingeniería de prompts para desarrollo, integración vía APIs, diseño de UI conversacional y consideraciones de producción (costos, seguridad, observabilidad). Todo con enfoque en aplicaciones reales, ética responsable y conexión con el resto del stack técnico. `
+>
+  <Terminal />
+
+  <Accordion title="Fundamentos" sections={ai.fundamentos} />
+  <Accordion
+    title="A para productividad en el desarrollo"
+    sections={ai.productividad}
+  />
+  <Accordion
+    title="Integrando IA en aplicaciones web"
+    sections={ai.integracion}
+  />
+  <Accordion title="Patrones avanzados: RAG, agentes…" sections={ai.patrones} />
+  <Accordion title="Ética, costos y producción" sections={ai.etica} />
+
+  <ActionMenu />
+</MainLayout>

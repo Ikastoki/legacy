@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Form UI to learn HTML and CSS" />
+    <meta name="keywords" content="HTMl, CSS, Front-end, Roadmap.sh" />
+    <meta name="author" content="Unai" />
+    <title>Accessible Form UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-data">
+        <form action="" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              placeholder="What should we call you?"
+              id="name"
+              minlength="2"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="name">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your e-mail"
+              id="name"
+              minlength="2"
+              class="error-input"
+            />
+            <p class="error">Email is already taken</p>
+          </div>
+
+          <div class="form-group">
+            <label for="pass">Enter Password</label>
+            <input
+              type="password"
+              placeholder="xxxxxxxxxx"
+              id="pass"
+              minlength="8"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-pass">Confirm Password</label>
+            <input
+              type="password"
+              placeholder="xxxxxxxxxx"
+              id="confirm-pass"
+              minlength="8"
+            />
+          </div>
+        </form>
+
+        <button type="submit" class="form-btn">Update Profile</button>
+      </div>
+
+      <div class="form-feedback">
+        <div class="range">65%</div>
+
+        <h2>Profile Completeness</h2>
+
+        <div class="profile-list">
+          <ul>
+            <li class="line-through">Create Account</li>
+            <li class="line-through">Update Roadmap Progress</li>
+            <li class="line-through">Setup Public Profile</li>
+            <li>Complete your first project</li>
+            <li>Invite your Friends</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

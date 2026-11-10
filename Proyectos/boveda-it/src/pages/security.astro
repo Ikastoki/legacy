@@ -1,0 +1,46 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { security } from "../data/security";
+---
+
+<MainLayout
+  title="Seguridad"
+  heading="Seguridad básica"
+  description=`
+        Esta sección recopila los fundamentos y herramientas para proteger sistemas, redes y datos frente a amenazas reales. Desde la tríada CIA y modelos de riesgo hasta criptografía aplicada, pasando por análisis de vulnerabilidades (OWASP, CVE), uso de herramientas y respuesta a incidentes. Con enfoque en comandos reales, casos prácticos y buenas prácticas de hardening, está diseñada para que cualquier profesional IT pueda implementar una postura de seguridad sólida desde el primer día.
+`
+>
+  <Terminal />
+
+  <Accordion
+    title="Fundamentos y gestión de riesgos"
+    sections={security.fundamentos}
+  />
+  <Accordion
+    title="Roles, equipos y metodologías"
+    sections={security.rolesEquipos}
+  />
+  <Accordion
+    title="Herramientas de seguridad por categoría"
+    sections={security.herramientas}
+  />
+  <Accordion
+    title="Criptografía y comunicaciones seguras"
+    sections={security.criptografia}
+  />
+  <Accordion
+    title="Tipos de ataques y vulnerabilidades"
+    sections={security.ataques}
+  />
+  <Accordion
+    title="Defensa, monitorización y respuesta a incidentes"
+    sections={security.defensa}
+  />
+
+  <ActionMenu />
+</MainLayout>

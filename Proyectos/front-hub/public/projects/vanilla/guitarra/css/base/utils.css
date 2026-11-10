@@ -1,0 +1,12 @@
+[class*="contenedor"] {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+}
+[class*="heading"] {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 5rem 0;
+}

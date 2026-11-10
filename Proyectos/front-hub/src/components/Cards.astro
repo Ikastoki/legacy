@@ -1,0 +1,38 @@
+---
+import vanillaTemplates from "../data/vanilla.js";
+import tailwindTemplates from "../data/tailwind.js";
+import bootstrapTemplates from "../data/bootstrap.js";
+import astroTemplates from "../data/astro.js";
+import TemplateCard from "./Card.astro";
+
+const templates = [
+  ...vanillaTemplates,
+  ...tailwindTemplates,
+  ...bootstrapTemplates,
+  ...astroTemplates,
+];
+---
+
+<div id="templates-container" class="templates-grid">
+  {templates.map((template) => <TemplateCard template={template} />)}
+</div>
+
+<style>
+  .templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 0 20px;
+    width: 75%;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  @media (max-width: 500px) {
+    body {
+    }
+    .templates-grid {
+      width: 100%;
+      margin: 0;
+    }
+  }
+</style>

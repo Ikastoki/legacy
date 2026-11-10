@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Textarea that tracks and displays the number of characters typed by the user"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Roadmap.sh" />
+    <meta name="author" content="Unai" />
+    <title>Restricted Textarea</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Write a Message</h1>
+    <!-- <p contenteditable="true"></p> -->
+    <div class="text-container">
+      <textarea
+        name="message"
+        id="message"
+        class="message"
+        placeholder="Start typing..."
+      ></textarea>
+      <div class="counter"><span class="counter-value">0</span> / 250</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

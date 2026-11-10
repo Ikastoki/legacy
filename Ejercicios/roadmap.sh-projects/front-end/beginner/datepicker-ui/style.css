@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 70%;
+  max-width: 500px;
+  margin: 50px auto;
+  border: 1px solid black;
+}
+
+.datepicker {
+  input {
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+
+    &:focus {
+      background: gainsboro;
+      border: 2px solid black;
+    }
+  }
+}
+
+.calendar-header {
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 14px;
+
+  p {
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+  }
+}
+
+.days {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  .day-number {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+footer {
+  p {
+    text-align: center;
+    font-weight: 900;
+    font-style: italic;
+  }
+}

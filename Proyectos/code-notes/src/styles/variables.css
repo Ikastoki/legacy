@@ -1,0 +1,81 @@
+/* :root {
+  --white: #fff;
+  --black: #000;
+
+  --bg-color: #fff;
+  --text-color: #000;
+  --grid-color: rgba(0, 0, 0, 0.05);
+  --card-border: #e0e0e0;
+  --bg-glosario-toggle: #f1f5f9;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --white: #fff;
+    --black: #000;
+    --primary-color: #be123c;
+    --secondary-color: #ff758f;
+    /* --primary-color: #76aeed; */
+
+    --bg-color: #fff;
+    --text-color: #000;
+    --grid-color: rgba(0, 0, 0, 0.05);
+    --card-border: #e0e0e0;
+    --bg-glosario-toggle: #f0f0f0;
+    --card-bg: #fff;
+    --card-description: #292929;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: var(--bg-glosario-toggle);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color); /* o var(--card-description) */
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      cursor: grab;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #000;
+    --black: #fff;
+    --primary-color: #be123c;
+    --secondary-color: #ff758f;
+
+    /* --bg-color: #0f172a; */
+    --bg-color: #0d1117;
+    --text-color: #fff;
+    --grid-color: rgba(255, 255, 255, 0.05);
+    /* --bg-glosario-toggle: #14203b; */
+    --bg-glosario-toggle: #141922;
+    --card-description: #d3d3d3;
+    /* --card-bg: #14203b; */
+    --card-bg: #141922;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: var(--card-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--card-description);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      cursor: grab;
+    }
+  }
+}

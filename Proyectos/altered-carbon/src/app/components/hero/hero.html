@@ -1,0 +1,152 @@
+<section class="hero" id="hero" aria-label="Presentación">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Tema para VS Code</span>
+      <h1>Altered Carbon</h1>
+      <p>
+        Tema oscuro inspirado en el esquema de colores del tema Carbon de
+        IntelliJ IDEA.
+      </p>
+
+      <div class="badge" aria-label="Compatibilidad">
+        <span>VS Code</span>
+        <span aria-hidden="true">•</span>
+        <span>VSCodium</span>
+        <span aria-hidden="true">•</span>
+        <span>Cursor</span>
+      </div>
+
+      <div class="hero-cta">
+        <a
+          id="downloadVsix"
+          class="btn btn-primary"
+          href="./assets/altered-carbon-0.0.1.vsix"
+          download
+          aria-label="Descargar archivo VSIX de Altered Carbon"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1.5 1.5 0 0 1-2.121 0L6.572 11.707a1 1 0 1 1 1.414-1.414L10 12.586V4a1 1 0 0 1 1-1zM5 19a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5z"
+            ></path>
+          </svg>
+          Descargar .vsix
+        </a>
+      </div>
+    </div>
+
+    <div class="mock" aria-label="Vista previa estilo VS Code">
+      <div class="mock-titlebar">
+        <div class="traffic" aria-hidden="true">
+          <span class="dot" style="background: #e06c75"></span>
+          <span class="dot" style="background: #e5c07b"></span>
+          <span class="dot" style="background: #98c379"></span>
+        </div>
+        <strong>Altered Carbon</strong>
+      </div>
+
+      <div class="mock-body">
+        <aside class="sidebar" aria-label="Barra lateral">
+          <h4>EXPLORER</h4>
+          <div class="item active">src</div>
+          <div class="item">assets</div>
+          <div class="item">README.md</div>
+          <div class="item">package.json</div>
+        </aside>
+
+        <div class="editor">
+          <div class="tabs" role="tablist" aria-label="Pestañas de archivos">
+            <div
+              class="tab"
+              [class.active]="activeTab === 'js'"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'js'"
+              (click)="switchTab('js')"
+              (keydown.enter)="switchTab('js')"
+              tabindex="0"
+            >
+              app.js
+            </div>
+            <div
+              class="tab"
+              [class.active]="activeTab === 'py'"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'py'"
+              (click)="switchTab('py')"
+              (keydown.enter)="switchTab('py')"
+              tabindex="0"
+            >
+              main.py
+            </div>
+          </div>
+
+          <div
+            class="code-wrap"
+            role="region"
+            aria-label="Código de ejemplo con resaltado simulado"
+          >
+            <pre
+              id="block-js"
+              [style.display]="activeTab === 'js' ? 'grid' : 'none'"
+              aria-labelledby="tab-js">
+<span class="gutter" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</span><code class="code">
+<span class="indent active"><span class="sel">/* Demo resaltado y selección */</span></span>
+<span class="indent">const theme = <span class="bracket">&#123;</span>
+  name: "Altered Carbon",
+  accents: ["<span class='sel inactive'>teal</span>", "yellow"],
+  background: "<span class='cursor'>#172030</span>"
+<span class="bracket">&#125;</span>;</span>
+<span class="indent active">function boot(modules = []) <span class="bracket">&#123;</span>
+  return modules.map(m =&gt; <span class="bracket">&#123;</span> ready: true, m <span class="bracket">&#125;</span>);
+<span class="bracket">&#125;</span></span>
+<span class="indent">// TODO: aplicar indent guides y números de línea
+</span></code></pre>
+
+            <pre
+              id="block-py"
+              [style.display]="activeTab === 'py' ? 'grid' : 'none'"
+              aria-labelledby="tab-py">
+<span class="gutter" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</span><code class="code">
+<span class="indent active"><span class="sel"># Demo resaltado y selección</span></span>
+<span class="indent">from dataclasses import dataclass</span>
+<span class="indent">@dataclass</span>
+<span class="indent">class Theme:</span>
+<span class="indent active">  name: str</span>
+<span class="indent">  accents: list[str]</span>
+<span class="indent">  background: str</span>
+<span class="indent">t = Theme("Altered Carbon", ["<span class='sel inactive'>teal</span>", "yellow"], "<span class='cursor'>#172030</span>")</span>
+</code></pre>
+          </div>
+
+          <div class="statusbar">
+            <span>{{ activeTab === 'js' ? 'UTF-8 | LF | JavaScript' : 'UTF-8 | LF | Python' }}</span>
+            <span>Ln 6, Col 26</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap");
+
+:root {
+  /* Colors */
+  --bright_orange: hsl(31, 77%, 52%);
+  --dark_cyan: hsl(184, 100%, 22%);
+  --very_dark_cyan: hsl(179, 100%, 13%);
+  --transparent_white: hsla(0, 0%, 100%, 0.75);
+  --very_light_gray: hsl(0, 0%, 95%);
+  /* Fonts */
+  --primary-font: "Lexend Deca", sans-serif;
+  --secondary-font: "Big Shoulders Display", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--primary-font);
+  background-color: var(--very_light_gray);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  width: 90%;
+  max-width: 400px;
+  min-width: 250px;
+  margin: 10rem 0;
+}
+
+@media (min-width: 800px) {
+  .cards {
+    display: flex;
+    max-width: none;
+    min-width: none;
+    height: 60rem;
+  }
+}
+
+.card {
+  padding: 4rem;
+}
+
+.card__heading {
+  color: var(--very_light_gray);
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+}
+
+.card__text {
+  color: var(--transparent_white);
+  margin-bottom: 2rem;
+  width: 85%;
+  line-height: 2;
+  text-wrap: pretty;
+}
+
+.card__btn {
+  padding: 1.5rem 4rem;
+  background-color: var(--very_light_gray);
+  border: none;
+  border-radius: 40px;
+  font-size: 2rem;
+}
+
+.card__btn:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .card {
+    position: relative;
+  }
+  .card__btn {
+    position: absolute;
+    bottom: 8rem;
+  }
+}
+
+.card:nth-child(1) {
+  background-color: var(--bright_orange);
+  border-radius: 10px 10px 0 0;
+
+  .card__btn {
+    color: var(--bright_orange);
+  }
+}
+
+.card:nth-child(2) {
+  background-color: var(--dark_cyan);
+
+  .card__btn {
+    color: var(--dark_cyan);
+  }
+}
+
+.card:nth-child(3) {
+  background-color: var(--very_dark_cyan);
+  border-radius: 0 0 10px 10px;
+
+  .card__btn {
+    color: var(--very_dark_cyan);
+  }
+}
+
+@media (min-width: 800px) {
+  .card:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+  }
+  .card:nth-child(3) {
+    border-radius: 0 10px 10px 0;
+  }
+}

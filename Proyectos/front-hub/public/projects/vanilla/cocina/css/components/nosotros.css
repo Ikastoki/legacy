@@ -1,0 +1,28 @@
+.nosotros {
+  padding: 5rem 0;
+}
+.nosotros__heading {
+  text-align: center;
+}
+.nosotros__heading:after {
+  content: "";
+  display: block;
+  height: 10rem;
+  background-image: url(../../img/separador.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .nosotros__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+.nosotros__bloque {
+  text-align: center;
+}
+.nosotros__imagen {
+  margin: 0 auto;
+}

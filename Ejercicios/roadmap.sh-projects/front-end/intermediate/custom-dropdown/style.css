@@ -1,0 +1,54 @@
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-toggle:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: transparent;
+  min-width: 200px;
+}
+
+.show {
+  display: block;
+}

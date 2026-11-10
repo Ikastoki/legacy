@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Work-Sans-Regular";
+  src: url(../fonts/static/WorkSans-Regular.ttf);
+  font-family: "Work-Sans-SemiBold";
+  src: url(../fonts/static/WorkSans-SemiBold.ttf);
+  font-family: "Work-Sans-Bold";
+  src: url(../fonts/static/WorkSans-Bold.ttf);
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light_pink: hsl(275, 100%, 97%);
+  --grayish_purple: hsl(292, 16%, 49%);
+  --dark_purple: hsl(292, 42%, 14%);
+
+  --font_regular: "Work-Sans-Regular";
+  --font_semiBold: "Work-Sans-SemiBold";
+  --font_Bold: "Work-Sans-Bold";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font_regular);
+  background: url(../images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-color: var(--light_pink);
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-size: contain;
+  }
+}
+
+p {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  width: 80%;
+  max-width: 500px;
+  margin: 200px auto;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  gap: 20;
+  margin-bottom: 30px;
+}
+
+.item {
+  margin-bottom: 25px;
+}
+
+.item:last-of-type {
+  margin-bottom: 0;
+}
+
+.item__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__header strong {
+  margin-bottom: 20px;
+  font-family: var(--font_Bold);
+  font-size: 1.2em;
+}
+
+.item__header img {
+  align-self: start;
+}
+
+.item__header img:hover {
+  cursor: pointer;
+}
+
+.paragraph {
+  color: var(--grayish_purple);
+  line-height: 1.5;
+  display: none;
+  text-wrap: balance;
+}
+
+.active {
+  display: block;
+}

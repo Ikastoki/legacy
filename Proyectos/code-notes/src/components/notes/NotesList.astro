@@ -1,0 +1,50 @@
+---
+const { title, files } = Astro.props;
+---
+
+<div class="list-block">
+  <h3 class="title">{title}</h3>
+  <ul class="list">
+    {
+      files.map((note: any) => (
+        <li class="list-item">
+          <a href={note.url}>{note.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  .list-block {
+    margin: 20px 30px;
+  }
+
+  .title {
+    margin-bottom: 0px;
+  }
+
+  .resources {
+    margin-top: 20px;
+  }
+
+  .list {
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+
+  a {
+    color: var(--black);
+    font-weight: 600;
+    border-bottom: 1px solid var(--black);
+    transition: all 0.1s ease;
+    display: inline-block;
+    margin-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    text-decoration: underline;
+
+    &:hover {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+  }
+</style>

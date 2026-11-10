@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Github repository finder" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Front-end, Roadmap.sh"
+    />
+    <meta name="author" content="Unai" />
+    <title>GitHub Random Repository</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>GitHub Random Repository</h1>
+      <select
+        name="language-select"
+        id="language-select"
+        class="language-select"
+      >
+        <option value="" disabled selected>Select a Language</option>
+        <option value="javascript">JavaScript</option>
+        <option value="typescript">TypeScript</option>
+        <!-- Angular: to display error fetch ->  -->
+        <option value="angular">Angular</option>
+        <option value="java">Java</option>
+      </select>
+
+      <div id="repo-details" class="repo-details hidden">
+        <h2 id="repo-name" class="repo-name"></h2>
+        <p id="repo-description" class="repo-description"></p>
+        <div class="repo-details-flex">
+          <p>Stars: <span id="repo-stars" class="repo-stars"></span></p>
+          <p>Forks: <span id="repo-forks" class="repo-forks"></span></p>
+          <p>Open Issues: <span id="repo-issues" class="repo-issues"></span></p>
+        </div>
+        <a href="" target="_blank" id="repo-link" class="repo-link">
+          <img src="img/github-icon.svg" alt="github icon" />
+        </a>
+      </div>
+      <p id="error-message" class="error-message hidden"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

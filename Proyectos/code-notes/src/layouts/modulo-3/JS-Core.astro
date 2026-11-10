@@ -1,0 +1,72 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes JavaScript";
+
+const sections = [
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/conceptos/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/fundamentos/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/control-de-flujo/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/funciones/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/objetos/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/objetos-incorporados/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/arrays/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/map-set/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/json/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/manipular-datos/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/prototipos-poo/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/asincronia/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/expresiones-regulares/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/modulos/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-core/tips/*.md"
+  ),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="JavaScript"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

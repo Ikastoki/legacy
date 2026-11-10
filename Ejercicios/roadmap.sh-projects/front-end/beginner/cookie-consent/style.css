@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.cookie-popup {
+  background-color: #000;
+  color: #fff;
+  width: 250px;
+  height: 270px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cookie-header {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 50px;
+  }
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.cookie-content {
+  margin: 50px 0 20px 0;
+  font-size: 1.2rem;
+  text-wrap: balance;
+  width: 60%;
+}
+
+.cookie-footer {
+  display: flex;
+  justify-content: center;
+  a {
+    background: #fff;
+    padding: 10px 50px;
+    border-radius: 10px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

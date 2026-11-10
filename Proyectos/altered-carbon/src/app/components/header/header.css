@@ -1,0 +1,53 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--titlebar-bg) 90%, black 10%);
+  border-bottom: 1px solid var(--panel-border);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.logo {
+  max-width: 100%;
+  width: 35px;
+}
+.text-gradient {
+  background: linear-gradient(90deg, #61d6cd, #2aa198, #1b6963);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.brand .dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--accent-teal);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(42, 161, 152, 0.25);
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nav-links a {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+.nav-links a:hover {
+  background: #1a2434;
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Terminal from "../components/Terminal.astro";
+import Accordion from "../components/Accordion.astro";
+import ActionMenu from "../components/ActionMenu.astro";
+
+import { data } from "../data/data";
+---
+
+<MainLayout
+  title="Gestión de datos"
+  heading="Gestión de datos"
+  description=`
+        Domina el almacenamiento y la gestión eficiente de la información digital. 
+        Apuntes sobre bases de datos relacionales, no relacionales, APIs y análisis de datos. 
+        Esta sección te enseña a modelar, consultar y proteger los datos que alimentan las aplicaciones modernas garantizando integridad y acceso rápido hoy.`
+>
+  <Terminal />
+
+  <Accordion title="Fundamentos" sections={data.fundamentos} />
+  <Accordion title="Bases de datos relacionales" sections={data.relacionales} />
+  <Accordion title="Bases de datos NO relacionales" sections={data.nosql} />
+  <Accordion title="Análisis de datos " sections={data.analisis} />
+
+  <ActionMenu />
+</MainLayout>

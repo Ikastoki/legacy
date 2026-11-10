@@ -1,0 +1,77 @@
+:root {
+  /* Fuentes */
+  --fuentePrincipal: "Open Sans", sans-serif;
+  --fuenteSecundaria: "Roboto", cursive;
+
+  /* Colores */
+  --primario: #3b4862;
+  --primarioOscuro: #283142;
+  --negro: #000;
+  --blanco: #ffffff;
+  --gris: #eeefed;
+  --grisClaro: #f8f8f8;
+  --grisOscuro: #e6e6e6;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--fuentePrincipal);
+  font-size: 1.6rem;
+  background-color: darken(var(--grisClaro), 3%);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4.4rem;
+  font-family: var(--fuenteSecundaria);
+}
+
+h2 {
+  font-size: 4rem;
+  font-family: var(--fuenteSecundaria);
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+[class$="heading"] {
+  margin: 2rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--negro);
+}
+
+p {
+  color: var(--negro);
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}

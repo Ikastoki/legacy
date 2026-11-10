@@ -1,0 +1,34 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes Diseño";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-2/diseño/conceptos/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/diseño/diseño-adaptativo/*.md"
+  ),
+  await Astro.glob(
+    "../../pages/markdown/modulo-2/diseño/enfoque-de-desarrollo/*.md"
+  ),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="Diseño"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

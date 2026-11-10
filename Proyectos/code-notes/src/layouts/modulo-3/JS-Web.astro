@@ -1,0 +1,37 @@
+---
+import Menu from "../../components/notes/Menu.astro";
+import Topics from "../../components/notes/Topics.astro";
+import Layout from "../Layout.astro";
+
+const pageTitle = "Apuntes JavaScript";
+
+const sections = [
+  await Astro.glob("../../pages/markdown/modulo-3/javascript-web/bom/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-3/javascript-web/dom/*.md"),
+  await Astro.glob("../../pages/markdown/modulo-3/javascript-web/eventos/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-web/formularios/*.md"
+  ),
+  await Astro.glob("../../pages/markdown/modulo-3/javascript-web/api/*.md"),
+  await Astro.glob(
+    "../../pages/markdown/modulo-3/javascript-web/almacenamiento/*.md"
+  ),
+];
+---
+
+<Layout title={pageTitle}>
+  <section class="content-wrapper">
+    <Topics
+      sections={sections}
+      bgColor="red"
+      textColor="blue"
+      listTitle="JavaScript"
+    />
+
+    <main class="markdown-content">
+      <slot />
+    </main>
+  </section>
+
+  <Menu />
+</Layout>

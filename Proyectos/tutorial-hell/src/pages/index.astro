@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+import ChatButton from '../components/ChatButton.astro';
+import ChatModal from '../components/ChatModal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+
+  <main class="main">
+
+    <!-- HOME VIEW -->
+    <section id="homeView" class="view view--active">
+      <div class="container">
+        <div id="routesSection">
+          <div class="section-header">
+            <h2 class="section-header__title">Elige tu ruta</h2>
+          </div>
+          <div id="routeCards" class="route-grid"></div>
+        </div>
+
+        <div id="allCoursesSection">
+          <div class="section-header">
+            <h2 class="section-header__title">Todos los cursos</h2>
+            <span class="section-header__count" id="courseCount"></span>
+          </div>
+          <div id="continueWatching"></div>
+          <div id="courseGrid" class="course-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+          </div>
+          <div id="loadMoreContainer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE DETAIL VIEW -->
+    <section id="courseView" class="view">
+      <div class="container">
+        <button class="btn-back" id="btnBack">
+          &larr; Volver a los cursos
+        </button>
+
+        <div class="course-detail" id="courseDetail"></div>
+      </div>
+    </section>
+
+    <!-- ROUTE DETAIL VIEW -->
+    <section id="routeView" class="view">
+      <div class="container">
+        <button class="btn-back" id="btnRouteBack">
+          &larr; Volver a inicio
+        </button>
+
+        <div id="routeDetail"></div>
+      </div>
+    </section>
+  </main>
+
+  <ChatButton />
+  <ChatModal />
+
+  <Footer />
+
+  <script>
+    import '../scripts/main';
+  </script>
+</Layout>

@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: 1100px;
+  min-width: 250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  border: 1px solid var(--black);
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.bg-grid {
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.subrayado-fosforito {
+  background-color: #ffff00;
+  padding: 0.2em;
+  display: inline;
+  box-decoration-break: clone;
+}
+

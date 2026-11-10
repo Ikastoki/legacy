@@ -1,0 +1,31 @@
+<app-header />
+
+<main>
+  <nav class="filtros">
+    @for (cat of categorias; track cat) {
+      <button
+        class="filtro-btn"
+        [class.activo]="filtroActivo() === cat"
+        (click)="filtrar(cat)"
+      >
+        {{ categoriaLabels[cat] }}
+      </button>
+    }
+  </nav>
+
+  <div id="grid-cajones" class="grid-cajones" [class.animando]="animando()">
+    @for (cajon of cajonesFiltrados(); track cajon.id) {
+      <app-cajon-card
+        [cajon]="cajon"
+        [abierto]="cajonAbiertoId() === cajon.id"
+        (toggle)="toggleCajon(cajon.id)"
+      />
+    }
+  </div>
+</main>
+
+<footer>
+  <p class="footer-texto">
+    CAJÓN DEV SASTRE — <a href="https://github.com/u-n-a-i" target="_blank" rel="noopener noreferrer">u-n-a-i</a>
+  </p>
+</footer>

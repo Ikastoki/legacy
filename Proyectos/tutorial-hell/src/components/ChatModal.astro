@@ -1,0 +1,38 @@
+<div class="chat-modal" id="chatModal">
+  <div class="chat-modal__overlay" id="chatOverlay"></div>
+  <div class="chat-modal__content">
+    <div class="chat-modal__header">
+      <h3 class="chat-modal__title">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M12 2a10 10 0 0 1 10 10c0 1.7-.4 3.3-1.2 4.7L22 22l-5.3-1.2A10 10 0 1 1 12 2z"
+          ></path>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        Asistente IA
+      </h3>
+      <select class="chat-model-select" id="chatModelSelect">
+        <option value="openrouter/free">OpenRouter (automático)</option>
+        <option value="nvidia/nemotron-3-nano-30b-a3b:free">Nemotron 30B</option
+        >
+      </select>
+      <button class="chat-modal__close" id="chatCloseBtn">&times;</button>
+    </div>
+    <div class="chat-modal__messages" id="chatMessages">
+      <div class="chat-message chat-message--bot">
+        <div class="chat-message__avatar">IA</div>
+        <div class="chat-message__text">Hola!</div>
+      </div>
+    </div>
+    <div class="chat-modal__input-area">
+      <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." />
+      <button id="chatSendBtn">Enviar</button>
+    </div>
+  </div>
+</div>

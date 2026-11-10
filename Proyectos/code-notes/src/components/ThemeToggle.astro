@@ -1,0 +1,93 @@
+---
+import Moon from "./icons/Moon.astro";
+import Sun from "./icons/Sun.astro";
+
+const isDarkMode =
+  typeof window !== "undefined" && localStorage.getItem("theme") === "dark";
+---
+
+<button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">
+  <!-- Icono de Sol y Luna -->
+  <Sun />
+
+  <Moon />
+</button>
+
+<style>
+  .theme-toggle {
+    border: none;
+    background-color: var(--white);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 2px;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .theme-toggle:hover {
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    cursor: pointer;
+  }
+
+  /* Estilos para los temas */
+  :root[data-theme="light"] {
+    --white: #fff;
+    --black: #000;
+
+    --bg-color: #fff;
+    --text-color: #000;
+    --grid-color: rgba(0, 0, 0, 0.05);
+    --card-border: #e0e0e0;
+    --bg-glosario-toggle: #f0f0f0;
+    --card-bg: #fff;
+    --card-description: #292929;
+  }
+
+  :root[data-theme="dark"] {
+    --white: #000;
+    --black: #fff;
+
+    /* --bg-color: #0f172a; */
+    --bg-color: #0d1117;
+    --text-color: #fff;
+    --grid-color: rgba(255, 255, 255, 0.05);
+    /* --bg-glosario-toggle: #14203b; */
+    --bg-glosario-toggle: #141922;
+    --card-description: #bdbcbc;
+    /* --card-bg: #14203b; */
+    --card-bg: #141922;
+  }
+</style>
+
+<script type="module">
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+  const root = document.documentElement;
+
+  // Cambiar el tema según el almacenamiento local
+  if (localStorage.getItem("theme") === "dark") {
+    root.setAttribute("data-theme", "dark");
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+  } else {
+    root.setAttribute("data-theme", "light");
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+  }
+
+  // Evento para alternar el tema
+  themeToggleButton.addEventListener("click", () => {
+    if (root.getAttribute("data-theme") === "dark") {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+      sunIcon.style.display = "block";
+      moonIcon.style.display = "none";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      sunIcon.style.display = "none";
+      moonIcon.style.display = "block";
+    }
+  });
+</script>
